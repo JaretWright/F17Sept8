@@ -46,5 +46,12 @@ public class Time1 {
         this.seconds = seconds;
     }
     
-    
+    /**
+     * This method returns a String representing the time on a 24 hour clock
+     * @return 
+     */
+    public String toMilitaryTime()
+    {
+       return  String.format("%02d:%02d:%02d", hour, minutes, seconds);
+    }
 }
