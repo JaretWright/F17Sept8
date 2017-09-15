@@ -41,13 +41,18 @@ public class ClockController implements Initializable {
         try
         {
             Time1 time = new Time1(hours, minutes, seconds);
+            this.errorMessageLabel.setVisible(false);
             militaryTimeLabel.setVisible(true);
             militaryTimeLabel.setText(time.toMilitaryTime());
             
-            standardTimeLabel.set
+            standardTimeLabel.setVisible(true);
+            standardTimeLabel.setText(time.toStandardTime());
         } catch (IllegalArgumentException e)
         {
-            
+            militaryTimeLabel.setVisible(false);
+            standardTimeLabel.setVisible(false);
+            this.errorMessageLabel.setVisible(true);
+            errorMessageLabel.setText(e.getMessage());
         }
     }
 
