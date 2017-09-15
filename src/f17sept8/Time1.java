@@ -54,4 +54,19 @@ public class Time1 {
     {
        return  String.format("%02d:%02d:%02d", hour, minutes, seconds);
     }
+    
+    /**
+     * This method returns time with hours 1-12 and AM/PM information
+     * @return 
+     */
+    public String toStandardTime()
+    {
+        return String.format("%d:%02d:%02d %s",
+                ((hour == 0) || (hour == 12) ? 12 : hour % 12),
+                minutes,
+                seconds,
+                (hour < 12 ? "AM" : "PM"));
+    }
+    
+    
 }
